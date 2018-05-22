@@ -1,6 +1,7 @@
 package pkgApp.controller;
 
 import java.net.URL;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -67,6 +68,11 @@ public class RetirementController implements Initializable {
 		// decmial
 		hmTextFieldRegEx.put(txtYearsToWork, "\\d*?");
 		hmTextFieldRegEx.put(txtAnnualReturnWorking, "\\d*(\\.\\d*)?");
+		hmTextFieldRegEx.put(txtYearsRetired, "\\d*?");
+		hmTextFieldRegEx.put(txtAnnualReturnRetired, "\\d*(\\.\\d*)?");
+		hmTextFieldRegEx.put(txtRequiredIncome, "\\d*(\\.\\d*)?");
+		hmTextFieldRegEx.put(txtMonthlySSI, "\\d*(\\.\\d*)?");
+		
 
 		// Check out these pages (how to validate controls):
 		// https://stackoverflow.com/questions/30935279/javafx-input-validation-textfield
@@ -110,14 +116,29 @@ public class RetirementController implements Initializable {
 
 		// disable read-only controls
 		txtSaveEachMonth.setDisable(true);
+		txtSaveEachMonth.clear();
 		txtWhatYouNeedToSave.setDisable(true);
+		txtWhatYouNeedToSave.clear();
 
 		// Clear, enable txtYearsToWork
 		txtYearsToWork.clear();
 		txtYearsToWork.setDisable(false);
 
-		// TODO: Clear, enable the rest of the input controls. Hint! You already have a
 		// HashMap of all the input controls....!!!!
+		txtAnnualReturnWorking.clear();
+		txtAnnualReturnWorking.setDisable(false);
+		
+		txtYearsRetired.clear();
+		txtYearsRetired.setDisable(false);
+		
+		txtAnnualReturnRetired.clear();
+		txtAnnualReturnRetired.setDisable(false);
+		
+		txtRequiredIncome.clear();
+		txtRequiredIncome.setDisable(false);
+		
+		txtMonthlySSI.clear();
+		txtMonthlySSI.setDisable(false);
 	}
 
 	@FXML
